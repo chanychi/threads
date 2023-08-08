@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import React, { Suspense } from 'react';
+import {  NavBar,  Cart  } from './components'
+import { heroapi } from '@/data/hero.tsx'
+import { popularsales } from './data/popularsales.tsx'
+import { highlight } from './data/highlight.tsx'
+import { toprateslaes } from './data/data.tsx'
+import { sneaker } from './data/data.tsx'
+import { story } from './data/data.tsx'
+
+const Hero = React.lazy(() => import('./components/Hero'));
+const Sales = React.lazy(() => import('./components/Sales'));
+const FlexContent = React.lazy(() => import('./components/FlexContent'));
+const Stories = React.lazy(() => import('./components/Stories'));
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <NavBar />
+      <Cart />
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Hero heroapi={heroapi} />
+          <Sales endpoint={popularsales} ifExists />
+          <FlexContent endpoint={highlight} ifExists />
+          <Sales endpoint={toprateslaes} />
+          <FlexContent endpoint={sneaker} />
+          <Stories story={story} />
+        </Suspense>
+      </main>
     </>
   )
 }
