@@ -6,10 +6,25 @@ import {
   selectTotalAmount,
   selectTotalQTY,
   setClearCartItems,
+  setRemoveItemFromCart,
+  setIncreaseItemQTY,
+  setDecreaseItemQTY,
   setCloseCart,
   setOpenCart,
+  setAddItemToCart,
   setGetTotals
 } from "@/store/CartSlice.js";
+
+interface ItemProps {
+  id: number | string;
+  title: string;
+  text?: string;
+  img?: string;
+  color?: string;
+  shadow?: string;
+  price?: number | string;
+  cartQuantity?: number;
+}
 
 const useCart = () => {
   const dispatch = useDispatch();
@@ -34,13 +49,33 @@ const useCart = () => {
     dispatch(setClearCartItems());
   };
 
+  const onRemoveItem = (item: ItemProps) => {
+    dispatch(setRemoveItemFromCart(item));
+  }
+
+  const onIncreaseItemQTY = (item: ItemProps) => {
+    dispatch(setIncreaseItemQTY(item));
+  }
+
+  const onDecreaseItemQTY = (item: ItemProps) => {
+    dispatch(setDecreaseItemQTY(item));
+  }
+
+  const onAddToCart = (item: ItemProps) => {
+    dispatch(setAddItemToCart(item));
+  };
+
   return {
     ifCartState,
     cartItems,
     totalAmount,
     totalQTY,
     onCartToggle,
-    onClearCartItems
+    onClearCartItems,
+    onRemoveItem,
+    onIncreaseItemQTY,
+    onDecreaseItemQTY,
+    onAddToCart
   };
 };
 

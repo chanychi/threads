@@ -1,14 +1,14 @@
-import psale1 from "../assets/nike-air-red.png";
-import psale2 from "../assets/nike-adapt-bb.png";
-import psale3 from "../assets/nike-adapt-bb-smart.png";
-import { PopularSales } from "@/interfaces/popularsales.d";
+import psale1 from "../assets/spotlight/nike-air-red.png";
+import psale2 from "../assets/spotlight/nike-adapt-bb.png";
+import psale3 from "../assets/spotlight/nike-adapt-bb-smart.png";
+import { SalesItem } from "@/interfaces/salesitem.d";
 
-export const popularsales: PopularSales = {
-  title: "Popular Sales",
+export const popularsales: SalesItem = {
+  title: "TRENDING",
   items: [
     {
       id: "0p0x1",
-      title: "Nike Addapt BB 2.0",
+      title: "Nike Adapt BB 2.0",
       text: "MEN Running Shoes",
       rating: "4.9",
       btn: "Buy Now",

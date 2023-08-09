@@ -1,10 +1,11 @@
-interface Video {
+export interface Video {
   imgsrc: string;
   clip: string;
 }
 
-interface SocialLink {
+export interface Social {
   icon: string;
+  url: string;
 }
 
 export interface HeroAPI {
@@ -13,7 +14,7 @@ export interface HeroAPI {
   img: string;
   btntext: string;
   videos: Video[];
-  sociallinks: SocialLink[];
+  sociallinks: Social[];
 }
 
 

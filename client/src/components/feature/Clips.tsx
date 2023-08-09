@@ -1,11 +1,7 @@
 import { PlayIcon } from "@heroicons/react/24/solid";
+import { Video as VideoProps } from "@/interfaces/hero.d";
 
-interface ClipsProps {
-  clip: string;
-  imgsrc: string;
-}
-
-const Clips = ({ clip, imgsrc }: ClipsProps) => {
+const Clips = ({ clip, imgsrc }: VideoProps) => {
   return (
    <>
       <div className='relative h-28 w-32 rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 lg:w-28 md:w-24 sm:w-16 lg:h-24 md:h-20 sm:h-14'>

@@ -4,28 +4,13 @@ import { HashtagIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import Title from "./Title";
 import { truncate } from "lodash";
-
-interface NewsItem {
-  title: string;
-  text: string;
-  img: string;
-  url: string;
-  like: string;
-  time: string;
-  by: string;
-  btn: string;
-}
+import { Story } from '@/interfaces/story.d';
 
 interface StoriesProps {
-  story: {
-    title: string;
-    news: NewsItem[];
-  };
+  story: Story
 }
 
-
 const Stories = ({ story: { title, news } }: StoriesProps) => {
-  console.log(news)
     const splideOptions = {
         perPage: 4,
         perMove: 1,

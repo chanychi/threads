@@ -1,13 +1,11 @@
 import Item from "./Item";
-import Title from './Title'
-import { Items } from "@/interfaces/popularsales.d";
+import Title from '../topstory/Title'
+import { SalesItem } from "@/interfaces/salesitem.d";
+
 
 interface SalesProps {
   ifExists?: boolean;
-  endpoint: {
-    title: string;
-    items: Items[]; // Assuming items is an array of objects with properties matching ItemProps
-  };
+  endpoint: SalesItem;
 }
 
 const Sales = ({ ifExists = false, endpoint: { title, items } }: SalesProps) => {

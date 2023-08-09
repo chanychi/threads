@@ -1,10 +1,10 @@
 import hightlightimg from "../assets/hightlightimg.png";
-import { Hightlight } from "@/interfaces/highlights.d";
+import { Feature } from "@/interfaces/feature.d";
 
-export const highlight: Hightlight = {
+export const highlight: Feature = {
   heading: "HIGHLIGHTS",
   title: "NIKE AIR WITH LIMITLESS CHOICES",
-  text: "Our Purpose is to move the world forward. We take action by building community, protecting our planet and increasing access to sport.",
+  text: "Our mission is to propel the world ahead. We actively engage in creating a sense of community, safeguarding our planet, and enhancing access to sports.",
   btn: "Explore More",
   url: "https://www.nike.com/launch/t/nocta-hot-step-black-gold",
   img: hightlightimg,

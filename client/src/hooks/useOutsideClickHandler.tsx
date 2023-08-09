@@ -9,6 +9,7 @@ const useOutsideClickHandler = (ref: React.RefObject<HTMLElement>, onClose: () =
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         handleCloseCart();
+        handleCloseCart();
       }
     };
 
@@ -24,6 +25,7 @@ const useOutsideClickHandler = (ref: React.RefObject<HTMLElement>, onClose: () =
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscKeyPress);
+
     };
   }, [ref, handleCloseCart]);
 

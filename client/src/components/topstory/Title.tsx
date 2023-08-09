@@ -1,6 +1,4 @@
-interface TitleProps {
-  title: string;
-}
+import { FooterTitle as TitleProps } from "@/interfaces/footer.d";
 
 const Title = ({ title }: TitleProps) => {
   return (

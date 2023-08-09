@@ -11,7 +11,7 @@ export interface Items {
 }
 
 
-export interface PopularSales {
+export interface SalesItem {
   title: string;
   items: Items[]
 }

@@ -1,17 +1,12 @@
+import { Feature } from "@/interfaces/feature.d";
+
 interface FlexContentProps {
   ifExists?: boolean;
-  endpoint: {
-    title: string;
-    heading: string;
-    text: string;
-    img: string;
-    btn: string;
-    url: string;
-  }
+  endpoint: Feature
 }
 
 const FlexContent = ({ ifExists = false, endpoint: { title, heading, text, img, btn, url } }: FlexContentProps) => {
-  console.log(ifExists, title, heading, text, img, btn, url);
+
   return (
     <div className={`flex items-center justify-between lg:flex-col lg:justify-center nike-container mt-16 ${ifExists ? 'flex-row-reverse' : 'flex-row'}`}>
       <div className='max-w-lg lg:max-w-none w-full md:text-center grid items-start lg:justify-items-center'>

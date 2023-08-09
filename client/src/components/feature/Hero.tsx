@@ -1,8 +1,8 @@
-import { HeroAPI } from "@/interfaces/hero.d";
+import { HeroAPI as HeroAPIProps} from "@/interfaces/hero.d";
 import Clips from "./Clips";
 import SocialLink from "./SocialLink";
 
-const Hero = ({ heroapi } : {heroapi: HeroAPI }) => {
+const Hero = ({ heroapi } : {heroapi: HeroAPIProps }) => {
   const { title, subtitle, btntext, videos, img, sociallinks} = heroapi;
 
   return (
@@ -25,11 +25,12 @@ const Hero = ({ heroapi } : {heroapi: HeroAPI }) => {
             </div>
             <div className='grid items-center absolute top-[33vh] lg:top-[27vh] right-0 gap-3'>
             {sociallinks?.map((val, i) => (
-                <SocialLink
+               <SocialLink
                   key={i}
                   icon={val.icon}
+                  url={val.url}
                 />
-              ))}
+            ))}
             </div>
           </div>
           <div className='flex items-center'>

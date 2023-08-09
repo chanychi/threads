@@ -1,4 +1,4 @@
-export interface Hightlight {
+export interface Feature {
   heading: string;
   title: string;
   text: string;
