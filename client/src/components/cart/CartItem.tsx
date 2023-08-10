@@ -13,9 +13,9 @@ interface CartItemProps {
   };
 }
 
-const CartItem = ({ item: { id, title, text, img, color, shadow, price, cartQuantity } }: CartItemProps) => {
+const CartItem = ({ item }: CartItemProps) => {
   const { onRemoveItem, onIncreaseItemQTY, onDecreaseItemQTY } = useCart();
-  const item = { id, title, text, img, color, shadow, price, cartQuantity }
+  const { color, shadow, img, price, text, title, id, cartQuantity } = item;
 
   return (
     <>
@@ -43,7 +43,7 @@ const CartItem = ({ item: { id, title, text, img, color, shadow, price, cartQuan
         </div>
         <div className="grid items-center gap-5">
           <div className="grid items-center justify-center pt-1">
-          {price !== undefined && cartQuantity !== undefined ? (
+            {price !== undefined && cartQuantity !== undefined ? (
               <h1 className="text-lg lg:text-base text-slate-900 font-medium">
                 ${price * cartQuantity}
               </h1>

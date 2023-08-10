@@ -8,8 +8,8 @@ interface SalesProps {
   endpoint: SalesItem;
 }
 
-const Sales = ({ ifExists = false, endpoint: { title, items } }: SalesProps) => {
-
+const Sales = ({ ifExists = false, endpoint }: SalesProps) => {
+  const { title, items } = endpoint;
   return (
    <>
       <div className='nike-container mt-16'>

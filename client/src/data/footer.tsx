@@ -1,7 +1,7 @@
 import { FooterAPI } from "@/interfaces/footer.d";
 
 export const footerAPI: FooterAPI = {
-  category: [ {title: "About Nike"},{title: "Get Help"},{title: "Company"} ],
+  category: [ {title: "About Sike"},{title: "Get Help"},{title: "Company"} ],
   links: [
     [
       {link: "News"},

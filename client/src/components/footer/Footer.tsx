@@ -4,8 +4,8 @@ interface FooterProps {
   footerAPI: FooterAPI
 }
 
-const Footer = ({ footerAPI: { category, links } }: FooterProps) => {
-
+const Footer = ({ footerAPI }: FooterProps) => {
+  const { category, links } = footerAPI;
   return (
    <>
       <footer className='bg-theme pt-7 pb-5'>

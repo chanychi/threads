@@ -10,7 +10,8 @@ interface StoriesProps {
   story: Story
 }
 
-const Stories = ({ story: { title, news } }: StoriesProps) => {
+const Stories = ({ story }: StoriesProps) => {
+    const { title, news } = story;
     const splideOptions = {
         perPage: 4,
         perMove: 1,
